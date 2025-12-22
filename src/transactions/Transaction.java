@@ -11,6 +11,11 @@ public class Transaction {
         this.amount = amount;
     }
 
+    public Transaction(double amount,TransactionType type) {
+        this.amount=amount;
+        this.type=type;
+    }
+
     public Transaction(double amount, Account fromAccount,Account toAccount,TransactionType type) {
         this.amount=amount;
         this.fromAccount=fromAccount;
@@ -35,5 +40,13 @@ public class Transaction {
 
     public void setType(TransactionType type) {
         this.type = type;
+    }
+
+    public void setToAccount(Account toAccount) {
+        this.toAccount = toAccount;
+    }
+
+    public void setFromAccount(Account fromAccount) {
+        this.fromAccount = fromAccount;
     }
 }
