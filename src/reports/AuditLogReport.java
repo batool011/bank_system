@@ -4,6 +4,8 @@ import core.BankSystem;
 
 public class AuditLogReport implements Report {
 
+
+
     private BankSystem bankSystem;
 
     public AuditLogReport(BankSystem bankSystem) {
@@ -17,3 +19,4 @@ public class AuditLogReport implements Report {
                 bankSystem.getTransactions().size());
     }
 }
+     
