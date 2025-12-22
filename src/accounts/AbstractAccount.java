@@ -1,12 +1,17 @@
 package accounts;
 
 import interest.InterestPolicy;
+import notifications.NotificationObserver;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractAccount implements Account {
 
     protected String accountId;
     protected double balance;
     protected AccountState state;
+    protected List<NotificationObserver> observers = new ArrayList<>();
 
     public AbstractAccount(String accountId, double balance) {
         this.accountId = accountId;
@@ -58,6 +63,14 @@ public abstract class AbstractAccount implements Account {
         if (interestPolicy != null) {
             interestPolicy.apply(this);
         }
+    }
+
+    public void addObserver(NotificationObserver observer ) {
+        observers.add(observer);
+    }
+
+    public void notifyAll(String message) {
+        observers.forEach(o -> o.notify(message));
     }
 }
 
