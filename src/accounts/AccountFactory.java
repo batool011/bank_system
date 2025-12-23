@@ -15,7 +15,7 @@ public class AccountFactory {
                 return new ProxyAbstractAccount(new SavingAccount(id, balance, 1000, 0.03) , user);
 
             case CHECKING:
-                return new ProxyAbstractAccount(new CheckingAccount(id, balance, 2000) , user)
+                return new ProxyAbstractAccount(new CheckingAccount(id, balance, 2000) , user);
 
             case LOAN:
                 return new ProxyAbstractAccount(new LoanAccount(id, balance, 0.05) , user) ;
